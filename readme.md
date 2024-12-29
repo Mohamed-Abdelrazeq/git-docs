@@ -95,6 +95,22 @@ Fetches from and integrates with another repository or a local branch.
 git pull origin branch-name
 ```
 
+### Rebase instead of merge:
+```sh
+git pull --rebase origin branch-name
+```
+
+**Output:**
+```
+remote: Enumerating objects: X, done.
+remote: Counting objects: 100% (X/Y), done.
+remote: Compressing objects: 100% (X/Y), done.
+Receiving objects: 100% (X/Y), done.
+From https://github.com/user/repo
+ * branch            branch-name -> FETCH_HEAD
+Successfully rebased and updated refs/heads/branch-name.
+```
+
 **Output:**
 ```
 remote: Enumerating objects: X, done.
