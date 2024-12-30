@@ -264,3 +264,56 @@ Changes not staged for commit:
         modified:   filename
 Dropped stash@{0} (commit-hash)
 ```
+
+## 13. git reset
+Resets current HEAD to the specified state.
+
+### Soft reset (keeps changes in working directory and index):
+```sh
+git reset --soft commit-hash
+```
+
+### Mixed reset (keeps changes in working directory but not in index):
+```sh
+git reset --mixed commit-hash
+```
+
+### Hard reset (discards all changes in working directory and index):
+```sh
+git reset --hard commit-hash
+```
+
+**Output:**
+```
+HEAD is now at commit-hash Commit message
+```
+
+## 14. git commit --amend
+Modifies the most recent commit.
+
+### Amend the last commit:
+```sh
+git commit --amend -m "New commit message"
+```
+
+**Output:**
+```
+[branch-name new-commit-hash] New commit message
+ Date: Date
+ 1 file changed, X insertions(+), Y deletions(-)
+```
+
+## 15. git revert
+Reverts a commit by creating a new commit that undoes the changes.
+
+### Revert a specific commit:
+```sh
+git revert commit-hash
+```
+
+**Output:**
+```
+[branch-name new-commit-hash] Revert "Commit message"
+ Date: Date
+ 1 file changed, X insertions(+), Y deletions(-)
+```
