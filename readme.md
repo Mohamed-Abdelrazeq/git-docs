@@ -188,3 +188,79 @@ Date:   Date
 
         Commit message
 ```
+
+
+## 11. git rm -r --cached
+Removes files from the index (staging area) but keeps them in the working directory.
+
+```sh
+git rm -r --cached filename
+```
+
+**Output:**
+```
+rm 'filename'
+```
+
+## 12. git stash
+Temporarily shelves (or stashes) changes in the working directory that are not ready to be committed.
+
+### Save changes to stash:
+```sh
+git stash
+```
+
+**Output:**
+```
+Saved working directory and index state WIP on branch-name: commit-hash Commit message
+```
+
+### List stashed changes:
+```sh
+git stash list
+```
+
+**Output:**
+```
+stash@{0}: WIP on branch-name: commit-hash Commit message
+stash@{1}: WIP on branch-name: commit-hash Commit message
+```
+
+### Apply stashed changes:
+```sh
+git stash apply
+```
+
+**Output:**
+```
+On branch branch-name
+Changes not staged for commit:
+    (use "git add <file>..." to update what will be committed)
+    (use "git restore <file>..." to discard changes in working directory)
+        modified:   filename
+```
+
+### Drop a stash:
+```sh
+git stash drop stash@{0}
+```
+
+**Output:**
+```
+Dropped stash@{0} (commit-hash)
+```
+
+### Apply and drop the latest stash:
+```sh
+git stash pop
+```
+
+**Output:**
+```
+On branch branch-name
+Changes not staged for commit:
+    (use "git add <file>..." to update what will be committed)
+    (use "git restore <file>..." to discard changes in working directory)
+        modified:   filename
+Dropped stash@{0} (commit-hash)
+```
